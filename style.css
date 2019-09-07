@@ -1,0 +1,120 @@
+body{
+    font-family: 'Prompt', sans-serif;
+    background-color: #222222;
+}
+svg{
+    background-color: #00316d;
+}
+
+#navbar {
+    text-decoration: none;
+    position: fixed;
+    display: grid;
+    grid-template-rows: repeat(5, 100px) auto;
+    height: 100vh;
+}
+#navbar a{
+    text-decoration: none;
+    color: white;
+}
+#filler{
+    background-color: #00316d
+}
+main{
+    height: 100vh;
+    overflow-x: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
+}
+.navItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    background-image: linear-gradient(135deg, #00316d 50%,transparent 50%);
+    background-size: 310%;
+    transition: 200ms;
+    height: 100%;
+}
+.navItem:hover{
+    opacity: .8;
+}
+.selected{
+    transition: 200ms;
+    background-position: right;
+}
+
+.banner{
+    height: 300px;
+    width: 200px;
+    border-radius: 12px;
+    background-image: linear-gradient(135deg,#f5af19,#f12711);
+    padding: 1px;
+}
+.darkCard{
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    background-color: #222222;
+    opacity: .95;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    transition: 100ms
+}
+.dark{
+    grid-area: dark;
+    place-self: center;
+}
+h1{
+    grid-area: title;
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    place-self: center;
+    letter-spacing: 9px;
+    position: relative;
+}
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #444;
+    background:  linear-gradient(135deg,transparent,#f5af19,#f12711,transparent);
+   }
+h2{
+    padding: 15px;
+    font-weight: 600;
+    letter-spacing: 2px
+}
+p{
+    font-size: 18px;
+    padding: 10px;
+    line-height: 20px
+}
+.page{
+    scroll-snap-align: start;
+    height: 100vh;
+    text-align: center;
+    font-size: 40px
+}
+.home{
+    background-color: lightpink
+}
+.two{
+    
+    background-color: lightgreen
+}
+.three{
+    background-color: lightslategray
+}
+.four{
+    background-color: lightskyblue
+}
+.five{
+    background-color: lightgoldenrodyellow
+}
