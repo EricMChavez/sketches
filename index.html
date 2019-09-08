@@ -4,40 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Prompt:100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
     <link rel="stylesheet" href="style.css">
     <title>Sketches</title>
 </head>
 <body>
     <div id="navbar">
-        <a href="#home">
-            <svg fill="white" class="navItem" onclick="makeSelected()" width="100" viewBox="0 0 600 600">
-                <polygon points="150,112 425,112 425,187 225,187"/>
-                <polygon points="150,262 425,262 425,337 225,337 225,412 425,412 500,487 150,487"/>
-            </svg>
-        </a>
-        <a href="#page1"><div onclick="makeSelected(this)" class="navItem"><i class="fas fa-home"></i></div></a>
-        <a href="#page2"><div onclick="makeSelected(this)" class="navItem"><i class="far fa-user"></i></div></a>
-        <a href="#page3"><div onclick="makeSelected(this)" class="navItem"><i class="far fa-envelope"></i></div></a>
-        <a href="#page4"><div onclick="makeSelected(this)" class="navItem"><i class="fas fa-cog"></i></div></a>
-        <div id="filler"></div>
+        <svg fill="white" class="navItem nav0" onclick="makeSelected()" width="100" viewBox="0 0 600 600">
+            <polygon points="150,112 425,112 425,187 225,187"/>
+            <polygon points="150,262 425,262 425,337 225,337 225,412 425,412 500,487 150,487"/>
+        </svg>
+        <div onclick="makeSelected(this)" class="navItem nav1"><i class="fas fa-home"></i></div>
+        <div onclick="makeSelected(this)" class="navItem nav2"><i class="far fa-user"></i></div>
+        <div onclick="makeSelected(this)" class="navItem nav3"><i class="far fa-envelope"></i></div>
+        <div onclick="makeSelected(this)" class="navItem nav4"><i class="fas fa-cog"></i></div>
     </div>
     <main>
-        <!-- <h1>Eric Chavez</h1>
-        <div class="banner dark">
-            <div class="darkCard">
-                <h2>Hello World</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae adipisci placeat impedit nam doloribus cum eius accusantium, autem minima aliquid!</p>
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+        <div id="title">
+            <h1>Eric Chavez</h1>
+            <h2>Full-Stack Developer</h2>
+        </div>
+        <div id="hello">
+            <div id="dets"></div>
+            <div id="face"></div>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <div class="cardTitle">Hello World</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla culpa optio nostrum quae? Recusandae omnis, iusto corporis ipsum enim similique!</p>
             </div>
-        </div> -->
-        <div id="home" class="page home">Page 1</div>
-        <div id="page1" class="page two">Page 2</div>
-        <div id="page2" class="page three">Page 3</div>
-        <div id="page3" class="page four">Page 4</div>
-        <div id="page4" class="page five">Page 5</div>
+            <div class="card">
+                <div class="cardTitle">Hello World</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla culpa optio nostrum quae? Recusandae omnis, iusto corporis ipsum enim similique!</p>
+            </div>
+            <div class="card">
+                    <div class="cardTitle">Hello World</div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla culpa optio nostrum quae? Recusandae omnis, iusto corporis ipsum enim similique!</p>
+            </div>
+        </div>
     </main>
     
     <script src="script.js"></script>

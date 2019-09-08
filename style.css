@@ -1,120 +1,168 @@
 body{
-    font-family: 'Prompt', sans-serif;
-    background-color: #222222;
-}
-svg{
-    background-color: #00316d;
-}
+    font-family: 'Montserrat', sans-serif;
+    background-color: #dddddd;
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-template-areas: "nav main"
 
+}
+/* Navbar */
 #navbar {
-    text-decoration: none;
+    grid-area: nav;
+    height: 100vh;
     position: fixed;
     display: grid;
     grid-template-rows: repeat(5, 100px) auto;
-    height: 100vh;
-}
-#navbar a{
-    text-decoration: none;
     color: white;
-}
-#filler{
-    background-color: #00316d
-}
-main{
-    height: 100vh;
-    overflow-x: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-
+    background-image: linear-gradient(-45deg, #021B79,#0575E6)
 }
 .navItem{
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 28px;
-    background-image: linear-gradient(135deg, #00316d 50%,transparent 50%);
+    background-image: linear-gradient(-45deg,#dddddd 50%,transparent 50%);
     background-size: 310%;
     transition: 200ms;
     height: 100%;
 }
 .navItem:hover{
-    opacity: .8;
+    background-color: #0575E6;
 }
 .selected{
+    color: #222222;
     transition: 200ms;
     background-position: right;
 }
-
-.banner{
-    height: 300px;
-    width: 200px;
-    border-radius: 12px;
-    background-image: linear-gradient(135deg,#f5af19,#f12711);
-    padding: 1px;
+/* Main */
+main{
+    grid-area: main;
+    display: grid;
+    grid-template-rows: 100px 100px 300px 100px auto 100px;
+    grid-template-columns: 100px 1fr 1fr 2fr 100px;
+    grid-template-areas: 
+        ". . . . ."
+        ". title hello hello ."
+        ". . hello hello ."
+        ". . . . ."
+        ". cards cards cards ."
+        ". . . . ."
 }
-.darkCard{
-    height: 100%;
-    width: 100%;
-    border-radius: 12px;
-    background-color: #222222;
-    opacity: .95;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    transition: 100ms
-}
-.dark{
-    grid-area: dark;
-    place-self: center;
+#title{
+    grid-area: title;
+    color: #222222
 }
 h1{
-    grid-area: title;
-    color: white;
-    font-size: 40px;
-    font-weight: 700;
-    place-self: center;
-    letter-spacing: 9px;
     position: relative;
+    left: -4px;
+    display: inline;
+    font-size: 30px;
+    letter-spacing: 2px;
 }
-h1::after {
-    content: "";
+h1::after{
+    content: '';
     position: absolute;
-    bottom: -8px;
-    left: 0;
+    bottom: -3px;
+    left: 4px;
+    right: 0;
     height: 1px;
-    width: 100%;
-    background: #444;
-    background:  linear-gradient(135deg,transparent,#f5af19,#f12711,transparent);
-   }
+    background-image: linear-gradient(-45deg, transparent,#0575E6,transparent)
+}
 h2{
-    padding: 15px;
+    margin: 15px 0;
+    position: relative;
+    left: -2px;
+    letter-spacing: 1px;
+}
+.cardTitle{
+    font-size: 30px;
     font-weight: 600;
-    letter-spacing: 2px
+    letter-spacing: 3px;
+    margin: 15px
+}
+.cardTitle::after{
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 p{
-    font-size: 18px;
-    padding: 10px;
-    line-height: 20px
+    margin: 15px
 }
-.page{
-    scroll-snap-align: start;
-    height: 100vh;
+.cards{
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: stretch;
+    grid-column-gap:20px;
+}
+.card{
+    position: relative;
+    place-self: stretch;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    font-weight: lighter;
     text-align: center;
-    font-size: 40px
+    background-color: #222222;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .4), 15px 15px 40px rgba(0, 0, 0, 0.3);
 }
-.home{
-    background-color: lightpink
+#hello{
+    grid-area: hello;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "face dets dets";
+    justify-items: stretch;
+    grid-column-gap:20px;
 }
-.two{
-    
-    background-color: lightgreen
+#dets{
+    grid-area: dets;
+    background-color: #222222;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .4), 15px 15px 40px rgba(0, 0, 0, 0.3);
+
 }
-.three{
-    background-color: lightslategray
+#face{
+    grid-area: face;
+    background-image: url('/face.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .4), 15px 15px 40px rgba(0, 0, 0, 0.3);
+
 }
-.four{
-    background-color: lightskyblue
-}
-.five{
-    background-color: lightgoldenrodyellow
-}
+.bg {
+    /* animation:slide 23s ease-in-out infinite alternate; */
+    background-image: linear-gradient(-45deg, #404040 50%, #dddddd 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+    transform:translateX(-15%)
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:24s;
+    transform:translateX(15%)
+  }
+  
+  .bg3 {
+    animation-duration:25s;
+    transform:translateX(25%)
+  }
+  @keyframes slide {
+    0% {
+      transform:translateX(-15%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
